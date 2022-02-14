@@ -1,12 +1,17 @@
 <template>
    <div class="cart">
+      <cart-item />
       <button class="cart__btn">Корзина</button>
    </div>
 </template>
 <script>
+import cartItem from './cart-item'
+
 export default {
    name: 'cart',
-   components: {},
+   components: {
+      cartItem
+   },
    props: {},
    data() {
       return {
