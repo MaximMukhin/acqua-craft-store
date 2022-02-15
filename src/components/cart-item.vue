@@ -1,13 +1,30 @@
 <template>
   <div class="cart-item">
-     <div>cart item</div>
+     <img class="cart-item__image" :src=" require('../assets/images/' + cart_item_data.image)" alt="">
+     <div class="cart-item__info">
+        <p>{{cart_item_data.name}}</p>
+        <p>{{cart_item_data.price}}</p>
+        <p>{{cart_item_data.article}}</p>
+     </div>
+     <div class="cart-item__quantity">
+        <p>Количество</p>
+<!--         {{cart_item_data.quantity}} -->
+        </div>
+     <button>Delete</button>
   </div>
 </template>
 
 <script>
 export default {
    name: 'cart-item',
-   props: {},
+   props: {
+      cart_item_data: {
+         type: Object,
+         default() {
+            return {}
+         }
+      }
+   },
    data() {
       return {
 
@@ -15,10 +32,25 @@ export default {
    },
    computed: {},
    method: {},
+/*    mounted() {
+      console.log('mounted')
+      this.$set(this.cart_item_data, 'quantity', 1)
+   } */
 
 }
 </script>
 
 <style>
-
+.cart-item {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0 0 8px 0 #c5c5c5;
+   padding: 8px;
+   margin-bottom: 8px;
+}
+.cart-item__image{
+   max-width: 250px;
+}
 </style>

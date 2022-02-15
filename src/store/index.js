@@ -9,7 +9,10 @@ export default createStore({
   mutations: {
     SET_PRODUCTS_TO_STATE: (state, products) => {
       state.products = products;
-    }
+    },
+    SET_CART: (state, product) => {
+      state.cart.push(product)
+    },
   },
   actions: {
     GET_PRODUCTS_FROM_API({commit}) {
@@ -24,6 +27,9 @@ export default createStore({
         console.log(error)
         return error;
       })
+    },
+    ADD_TO_CART({commit}, product) {
+      commit('SET_CART', product);
     }
   },
   modules: {

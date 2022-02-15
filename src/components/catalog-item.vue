@@ -1,9 +1,11 @@
 <template>
    <div class="catalog-item">
-      <img class="catalog-item__image" :src=" require('../assets/images/' + product_data.image) " alt="img">
+      <img class="catalog-item__image" :src=" require('../assets/images/' + product_data.image)" alt="img">
       <p class="catalog-item__name">{{product_data.name}}</p>
       <p class="catalog-item__price">Цена: {{product_data.price}} руб.</p>
-      <button class="catalog-item__add-to-card-btn btn" @click="sendDataToParent">Купить</button>
+      <button class="catalog-item__add-to-card-btn btn" 
+      @click="addToCart">Купить
+      </button>
    </div>
 </template>
 
@@ -26,9 +28,9 @@ export default {
    },
    computed: {},
    methods:{
-      sendDataToParent(){
-         this.$emit('sendArticle', this.product_data.article)
-      },
+      addToCart() {
+         this.$emit('addToCart', this.product_data)
+      }
    },
 }
 </script>
@@ -41,7 +43,7 @@ export default {
    margin-bottom: 8px;
 }
 .catalog-item__image {
-   width: 250px;
+   max-width: 250px;
 }
 .catalog-item__add-to-card-btn {
   display: inline-block;

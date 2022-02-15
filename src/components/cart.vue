@@ -1,6 +1,11 @@
 <template>
    <div class="cart">
-      <cart-item />
+      <p>Cart</p>
+      <cart-item 
+         v-for="item in cart_data"
+         :key="item.article"
+         :cart_item_data="item"
+      />
       <button class="cart__btn">Корзина</button>
    </div>
 </template>
@@ -12,7 +17,14 @@ export default {
    components: {
       cartItem
    },
-   props: {},
+   props: {
+      cart_data: {
+         tipe: Array,
+         default() {
+            return []
+         }
+      }
+   },
    data() {
       return {
 
