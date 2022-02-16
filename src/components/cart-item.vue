@@ -8,9 +8,9 @@
      </div>
      <div class="cart-item__quantity">
         <p>Количество</p>
-<!--         {{cart_item_data.quantity}} -->
+        {{cart_item_data.quantity}}
         </div>
-     <button>Delete</button>
+     <button class="cart-item__delete-btn">Delete</button>
   </div>
 </template>
 
@@ -18,6 +18,7 @@
 export default {
    name: 'cart-item',
    props: {
+      quantity: 1,
       cart_item_data: {
          type: Object,
          default() {
@@ -26,17 +27,12 @@ export default {
       }
    },
    data() {
-      return {
-
-      }
+      return {}
    },
    computed: {},
-   method: {},
 /*    mounted() {
-      console.log('mounted')
       this.$set(this.cart_item_data, 'quantity', 1)
    } */
-
 }
 </script>
 
@@ -52,5 +48,8 @@ export default {
 }
 .cart-item__image{
    max-width: 250px;
+}
+.cart-item__delete-btn {
+   margin-left: 20px;
 }
 </style>
