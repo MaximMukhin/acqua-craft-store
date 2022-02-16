@@ -8,7 +8,7 @@
      </div>
      <div class="cart-item__quantity">
         <p>Количество</p>
-        {{cart_item_data.quantity}}
+<!--         {{cart_item_data.quantity}} -->
         </div>
      <button class="cart-item__delete-btn">Delete</button>
   </div>
@@ -18,7 +18,6 @@
 export default {
    name: 'cart-item',
    props: {
-      quantity: 1,
       cart_item_data: {
          type: Object,
          default() {
