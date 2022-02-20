@@ -2,9 +2,10 @@
    <div class="cart">
       <p>Cart</p>
       <cart-item 
-         v-for="item in cart_data"
+         v-for="item in bananaCart"
          :key="item.article"
          :cart_item_data="item"
+         :banana="item.article"
       />
       <button class="cart__btn">Корзина</button>
    </div>
@@ -30,7 +31,15 @@ export default {
 
       }
    },
-   computed: {},
+   computed: {
+      bananaCart() {
+         const newCartData = {
+            ...this.cart_data,
+            qty: 0,
+         }
+         return newCartData
+      }
+   },
    methods:{},
 }
 </script>

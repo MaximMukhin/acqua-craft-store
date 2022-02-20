@@ -6,6 +6,7 @@
         <p>{{cart_item_data.price}}</p>
         <p>{{cart_item_data.article}}</p>
      </div>
+     <div>{{banana}}</div>
      <div class="cart-item__quantity">
         <p>Количество</p>
 <!--         {{cart_item_data.quantity}} -->
@@ -18,6 +19,10 @@
 export default {
    name: 'cart-item',
    props: {
+      banana: {
+         type: String,
+         default: '...',
+      },
       cart_item_data: {
          type: Object,
          default() {
@@ -29,9 +34,9 @@ export default {
       return {}
    },
    computed: {},
-/*    mounted() {
-      this.$set(this.cart_item_data, 'quantity', 1)
-   } */
+   mounted() {
+     console.log(this) 
+   }
 }
 </script>
 
