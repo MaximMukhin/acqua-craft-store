@@ -1,8 +1,8 @@
 <template>
    <div class="catalog-item">
-      <img class="catalog-item__image" :src=" require('../assets/images/' + product_data.image)" alt="img">
-      <p class="catalog-item__name">{{product_data.name}}</p>
-      <p class="catalog-item__price">Цена: {{product_data.price}} руб.</p>
+      <img class="catalog-item__image" :src=" require('../assets/images/' + productData.image)" alt="img">
+      <p class="catalog-item__name">{{productData.name}}</p>
+      <p class="catalog-item__price">Цена: {{productData.price}} руб.</p>
       <button class="catalog-item__add-to-card-btn btn" 
       @click="addToCart">Купить
       </button>
@@ -14,7 +14,7 @@ export default {
    name: 'catalog-item',
    components: {},
    props: {
-      product_data: {
+      productData: {
          type: Object,
          default(){
             return {}
@@ -29,7 +29,7 @@ export default {
    computed: {},
    methods:{
       addToCart() {
-         this.$emit('addToCart', this.product_data)
+         this.$emit('addToCart', this.productData)
       }
    },
 }

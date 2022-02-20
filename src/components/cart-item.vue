@@ -1,10 +1,10 @@
 <template>
   <div class="cart-item">
-     <img class="cart-item__image" :src=" require('../assets/images/' + cart_item_data.image)" alt="">
+     <img class="cart-item__image" :src=" require('../assets/images/' + cartItemData.image)" alt="">
      <div class="cart-item__info">
-        <p>{{cart_item_data.name}}</p>
-        <p>{{cart_item_data.price}}</p>
-        <p>{{cart_item_data.article}}</p>
+        <p>{{cartItemData.name}}</p>
+        <p>{{cartItemData.price}}</p>
+        <p>{{cartItemData.article}}</p>
      </div>
      <div class="cart-item__quantity">
         <p>Количество {{quantity}}</p>
@@ -21,7 +21,7 @@ export default {
          type: String,
          default: '...',
       },
-      cart_item_data: {
+      cartItemData: {
          type: Object,
          default() {
             return {}
@@ -46,7 +46,7 @@ export default {
    margin-bottom: 8px;
 }
 .cart-item__image{
-   max-width: 250px;
+   max-width: 150px;
 }
 .cart-item__delete-btn {
    margin-left: 20px;

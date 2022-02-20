@@ -2,9 +2,9 @@
    <div class="cart">
       <p>Cart</p>
       <cart-item 
-         v-for="item in cart_data"
+         v-for="item in cartData"
          :key="item.article"
-         :cart_item_data="item"
+         :cartItemData="item"
          :quantity="item.article"
       />
       <button class="cart__btn">Корзина</button>
@@ -19,7 +19,7 @@ export default {
       cartItem
    },
    props: {
-      cart_data: {
+      cartData: {
          tipe: Array,
          default() {
             return []
@@ -32,13 +32,13 @@ export default {
       }
    },
    computed: {
-/*       bananaCart() {
+      bananaCart() {
          const newCartData = {
-            ...this.cart_data,
+            ...this.cartData,
             qty: 1,
          }
          return newCartData
-      } */
+      }
    },
    methods:{},
 }

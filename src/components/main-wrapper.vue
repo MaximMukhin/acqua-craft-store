@@ -4,7 +4,7 @@
       <catalog />
       <cart 
       v-if="CART.length"
-      :cart_data="CART"
+      :cartData="CART"
       />
    </div>
 </template>
@@ -46,5 +46,9 @@ export default {
    max-width: 1280;
    margin: 0 auto;
    font-size: 20px;
+}
+
+p {
+   margin: 4px;
 }
 </style>

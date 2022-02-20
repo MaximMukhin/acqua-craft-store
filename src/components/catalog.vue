@@ -5,7 +5,7 @@
       <catalog-item
          v-for="product in PRODUCTS"
          :key="product.article"
-         :product_data="product"
+         :productData="product"
          @addToCart="addToCart"
        />
       </div>
@@ -51,6 +51,10 @@ export default {
 .catalog {
    font-size: 20px;
    font-weight: 900;
+}
+
+h1 {
+   margin: 0;
 }
 .catalog__list {
       display: flex;
