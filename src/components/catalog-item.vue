@@ -2,9 +2,10 @@
    <div class="catalog-item">
       <img class="catalog-item__image" :src=" require('../assets/images/' + productData.image)" alt="img">
       <p class="catalog-item__name">{{productData.name}}</p>
+      <p class="catalog-item__color">{{productData.color}}</p>
       <p class="catalog-item__price">Цена: {{productData.price}} руб.</p>
       <button class="catalog-item__add-to-card-btn btn" 
-      @click="addToCart">Купить
+      @click="addToCart(), articleChild()">Купить
       </button>
    </div>
 </template>
@@ -30,6 +31,9 @@ export default {
    methods:{
       addToCart() {
          this.$emit('addToCart', this.productData)
+      },
+      articleChild() {
+         this.$emit('articleChild', this.productData.article)
       }
    },
 }

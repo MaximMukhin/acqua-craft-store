@@ -7,6 +7,7 @@
          :key="product.article"
          :productData="product"
          @addToCart="addToCart"
+         @articleChild="showArticleChild"
        />
       </div>
 
@@ -39,6 +40,9 @@ export default {
       ]),
       addToCart(data) {
          this.ADD_TO_CART(data)
+      },
+      showArticleChild(data) {
+         console.log('Добавлена в корзину',data)
       }
    },
    mounted() {
@@ -50,7 +54,7 @@ export default {
 <style>
 .catalog {
    font-size: 20px;
-   font-weight: 900;
+   font-weight: 600;
 }
 
 h1 {

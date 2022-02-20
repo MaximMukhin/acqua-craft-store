@@ -2,16 +2,17 @@
    <div class="cart">
       <p>Cart</p>
       <cart-item 
-         v-for="item in cartData"
+         v-for="(item, index) in cartData"
          :key="item.article"
          :cartItemData="item"
-         :quantity="item.article"
+         @deleteFromCartItem="deleteFromCartItem(index)"
       />
       <button class="cart__btn">Корзина</button>
    </div>
 </template>
 <script>
 import cartItem from './cart-item'
+import{mapActions} from 'vuex'
 
 export default {
    name: 'cart',
@@ -31,16 +32,15 @@ export default {
 
       }
    },
-   computed: {
-      bananaCart() {
-         const newCartData = {
-            ...this.cartData,
-            qty: 1,
-         }
-         return newCartData
+   computed: {},
+   methods:{
+      ...mapActions([
+         'DELETE_FROM_CART',
+      ]),
+      deleteFromCartItem(index){
+         this.DELETE_FROM_CART(index)
       }
    },
-   methods:{},
 }
 </script>
 <style>
