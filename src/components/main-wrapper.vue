@@ -6,7 +6,6 @@
       v-if="CART.length"
       :cart_data="CART"
       />
-
    </div>
 </template>
 

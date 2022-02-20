@@ -6,10 +6,8 @@
         <p>{{cart_item_data.price}}</p>
         <p>{{cart_item_data.article}}</p>
      </div>
-     <div>{{banana}}</div>
      <div class="cart-item__quantity">
-        <p>Количество</p>
-<!--         {{cart_item_data.quantity}} -->
+        <p>Количество {{quantity}}</p>
         </div>
      <button class="cart-item__delete-btn">Delete</button>
   </div>
@@ -19,7 +17,7 @@
 export default {
    name: 'cart-item',
    props: {
-      banana: {
+      quantity: {
          type: String,
          default: '...',
       },
@@ -34,9 +32,6 @@ export default {
       return {}
    },
    computed: {},
-   mounted() {
-     console.log(this) 
-   }
 }
 </script>
 
